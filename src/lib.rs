@@ -852,7 +852,7 @@ impl Connection {
     }
 
     fn with_tls(
-        scid: &[u8], odcid: Option<&[u8]>, config: &mut Config,
+        scid: &[u8], odcid: Option<&[u8]>, config: &Config,
         tls: tls::Handshake, is_server: bool,
     ) -> Result<Box<Connection>> {
         let max_rx_data = config.local_transport_params.initial_max_data;

@@ -349,7 +349,7 @@ pub extern fn quiche_retry(
 #[no_mangle]
 pub extern fn quiche_conn_new_with_tls(
     scid: *const u8, scid_len: size_t, odcid: *const u8, odcid_len: size_t,
-    config: &mut Config, ssl: *mut c_void, is_server: bool,
+    config: &Config, ssl: *mut c_void, is_server: bool,
 ) -> *mut Connection {
     let scid = unsafe { slice::from_raw_parts(scid, scid_len) };
 
